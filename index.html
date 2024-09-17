@@ -13,6 +13,7 @@
   
 </head>
 <body>
+  <!-- Your HTML content -->
   <div class="background">
     <div class="content">
       <img src="https://i.imgur.com/GprYNxt.png" alt="Logo" class="logo">
@@ -20,53 +21,33 @@
         Connecting people with ideas through<br>
         <span class="brand-experience">Brand Experience</span>
       </p>
-      <div class="email-section">
-        <p class="stay-updated">Stay Updated</p>
-        <form id="emailForm">
-          <input type="email" placeholder="Email" name="email" id="email" required>
-          <button type="submit">↵</button>
-        </form>
+    </div>
+
+    <!-- Updated positioning of contact info and social icons -->
+    <div class="footer-content">
+      <!-- Updated email to be clickable but without hyperlink styles -->
+      <p><a href="mailto:connect@unioncollective.co">connect@unioncollective.co</a></p>
+
+      <!-- Social Media Icons -->
+      <div class="social-icons">
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/company/unioncollective" target="_blank">
+          <img src="https://imgur.com/9a2Tphi.png" alt="LinkedIn" class="icon">
+        </a>
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/unioncollective.co" target="_blank">
+          <img src="https://imgur.com/avURQub.png" alt="Instagram" class="icon">
+        </a>
       </div>
     </div>
-    <div class="contact-info">
-      <p><a href="mailto:connect@unioncollective.co">connect@unioncollective.co</a></p>
+
+    <!-- Copyright Notice -->
+    <div class="copyright">
+      <p>© BXMedia Limited 2024</p>
     </div>
   </div>
 
-  <!-- JavaScript for form submission -->
-  <script>
-    document.getElementById('emailForm').addEventListener('submit', function(e) {
-      e.preventDefault(); // Prevent form from refreshing the page
-
-      // Get the email input value
-      var email = document.getElementById('email').value;
-
-      // Web App URL for Google Apps Script
-      var url = 'https://script.google.com/a/macros/bxmedia.group/s/AKfycbzjtQ6AyEJQaqNWWaU8sc7ctcsZ8UZU_iC-XGuP9B2QomK6z7ILJeIj9WrKGe9-QS1XYw/exec';
-
-      // Data to send to Google Apps Script
-      var data = {
-        "email": email
-      };
-
-      // Use fetch to send a POST request to the Google Apps Script Web App
-      fetch(url, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-      })
-      .then(function(response) {
-        alert('Email submitted successfully!');
-        document.getElementById('emailForm').reset(); // Clear the form
-      })
-      .catch(function(error) {
-        alert('There was an error submitting your email.');
-        console.error(error);
-      });
-    });
-  </script>
+  <!-- Link to external JS -->
+  <script src="scripts.js"></script>
 </body>
 </html>
