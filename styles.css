@@ -85,3 +85,52 @@ body, html {
   color: white;
   font-family: 'Space Grotesk', sans-serif;
 }
+
+/* Mobile Responsiveness: Adjust layout for smaller screens */
+@media (max-width: 768px) {
+  .logo {
+    height: 150px; /* Reduce the height of the logo for mobile */
+    margin-bottom: 20px;
+  }
+
+  .animated-text {
+    font-size: 18px; /* Scale down font size */
+  }
+
+  .brand-experience {
+    font-size: 40px; /* Reduce the brand experience text size */
+  }
+
+  .footer-content {
+    margin-bottom: 10px; /* Reduce spacing for mobile */
+    bottom: 20px;
+  }
+
+  .icon {
+    width: 20px; /* Make icons smaller */
+    height: 20px;
+  }
+
+  .copyright p {
+    font-size: 10px; /* Reduce copyright text size for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    height: 120px; /* Further reduce the height of the logo for smaller screens */
+  }
+
+  .animated-text {
+    font-size: 16px; /* Further reduce font size */
+  }
+
+  .brand-experience {
+    font-size: 36px; /* Further reduce text size */
+  }
+
+  .icon {
+    width: 18px; /* Make icons even smaller */
+    height: 18px;
+  }
+}
