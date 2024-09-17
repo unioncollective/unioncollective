@@ -13,7 +13,6 @@
   
 </head>
 <body>
-  <!-- Your HTML content -->
   <div class="background">
     <div class="content">
       <img src="https://i.imgur.com/GprYNxt.png" alt="Logo" class="logo">
@@ -21,13 +20,53 @@
         Connecting people with ideas through<br>
         <span class="brand-experience">Brand Experience</span>
       </p>
+      <div class="email-section">
+        <p class="stay-updated">Stay Updated</p>
+        <form id="emailForm">
+          <input type="email" placeholder="Email" name="email" id="email" required>
+          <button type="submit">↵</button>
+        </form>
+      </div>
     </div>
     <div class="contact-info">
-      <p>Email: connect@unioncollective.co</p>
+      <p><a href="mailto:connect@unioncollective.co">connect@unioncollective.co</a></p>
     </div>
   </div>
 
-  <!-- Link to external JS -->
-  <script src="scripts.js"></script>
+  <!-- JavaScript for form submission -->
+  <script>
+    document.getElementById('emailForm').addEventListener('submit', function(e) {
+      e.preventDefault(); // Prevent form from refreshing the page
+
+      // Get the email input value
+      var email = document.getElementById('email').value;
+
+      // Web App URL for Google Apps Script
+      var url = 'https://script.google.com/a/macros/bxmedia.group/s/AKfycbzjtQ6AyEJQaqNWWaU8sc7ctcsZ8UZU_iC-XGuP9B2QomK6z7ILJeIj9WrKGe9-QS1XYw/exec';
+
+      // Data to send to Google Apps Script
+      var data = {
+        "email": email
+      };
+
+      // Use fetch to send a POST request to the Google Apps Script Web App
+      fetch(url, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+      .then(function(response) {
+        alert('Email submitted successfully!');
+        document.getElementById('emailForm').reset(); // Clear the form
+      })
+      .catch(function(error) {
+        alert('There was an error submitting your email.');
+        console.error(error);
+      });
+    });
+  </script>
 </body>
 </html>
