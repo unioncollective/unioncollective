@@ -30,12 +30,13 @@ body, html {
 }
 
 .logo {
-  width: 288px; /* Increased logo size by 20% (from 240px) */
-  margin-bottom: 20px;
+  height: 220px; /* Maintain the same vertical height */
+  width: auto; /* Adjust the width proportionally based on the height */
+  margin-bottom: 30px;
 }
 
 .animated-text {
-  font-size: 23.04px; /* Increased by 20% (from 19.2px) */
+  font-size: 22px; /* Increased by 20% (from 19.2px) */
   color: #ffffff;
 }
 
@@ -43,7 +44,7 @@ body, html {
   font-family: 'Playfair Display', serif;
   font-style: italic;
   font-weight: 600;
-  font-size: 52.5px; /* Increased by 20% (from 43.75px) */
+  font-size: 50px; /* Increased by 20% (from 43.75px) */
   transition: color 0.2s ease; /* Smooth color change */
 }
 
